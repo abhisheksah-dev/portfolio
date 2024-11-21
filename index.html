@@ -40,7 +40,7 @@
   scroll-behavior: smooth;
 }
     </style>
-    <!-- <script src="./matter.js" defer></script> -->
+    <script src="./matter.js" defer></script>
   </head>
   <body class="bg-[#111] text-white font-['Nunito']">
     <section class="flex flex-col justify-between h-screen">
@@ -183,8 +183,8 @@
             >
               Interactive Frontend Developer
             </p>
-            <button
-              class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group"
+            <button id="aboutBtn"
+              class="bg-[#4595eb] py-2 px-5 rounded font-extrabold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] relative hover:scale-110 ease-in-out duration-100 group"  onclick="togglePopup()"
             >
               About Me
 
@@ -228,6 +228,62 @@
                 </g>
               </svg>
             </button>
+            <div 
+            id="popup" 
+            class="fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center z-50 hidden">
+            <!-- Popup Card -->
+            <div class="bg-gray-800 text-white rounded-lg p-6 max-w-lg w-full shadow-lg relative">
+              <!-- Close Button -->
+              <button 
+                class="absolute top-4 right-4 text-gray-400 hover:text-white"
+                onclick="togglePopup()">✕</button>
+            <div>
+              <h2 class="text-xl font-semibold text-blue-400 mb-4">About Me</h2>
+              <p class="text-gray-300 mb-6">
+                Hi! I'm a passionate student specializing in designing and building interactive, user-friendly frontends. I love crafting visually appealing and responsive web interfaces that provide seamless user experiences. Constantly exploring new tools and technologies, I aim to turn creative ideas into functional designs.
+
+I enjoy solving challenges and bringing static designs to life with HTML, CSS, JavaScript, and modern frameworks. My focus is on creating clean, efficient, and accessible code that enhances the user journey.
+
+
+              </p>
+              
+              <!-- Technology Tags -->
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#javascript</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#react.js</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#redux</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#node.js</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#express.js</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#mongoDB</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#mongoose</span>
+    
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#html</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#css</span>
+  
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#bootstrap</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#tailwind</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#git</span>
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#github</span>
+        
+                <span class="bg-gray-700 text-sm px-3 py-1 rounded-lg">#figma</span>
+              </div>
+      
+              <!-- MERN Stack -->
+              <h3 class="text-lg font-semibold text-blue-400 mb-4">MERN Stack</h3>
+              <div class="flex items-center justify-between gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB" class="h-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express.js" class="h-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js" class="h-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" class="h-10">
+              </div>
+            </div>
+          </div>
+        </div>
+      
+            <!-- Optional JavaScript to Close Popup -->
+
+           
+          
           </div>
         </div>
 
@@ -695,7 +751,7 @@
     <footer class="flex flex-col items-center pb-10">
       <p class="text-xs text-gray-300">Abhishek Sah © 2024</p>
       <div class="black-logo my-4 scroll-smooth">
-        <a  href="#" >
+        <a  href="#">
           <svg
           width="50"
           height="50"
@@ -815,8 +871,14 @@
         },
       });
     </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
     <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    <script>
+      function togglePopup() {
+        const popup = document.getElementById("popup");
+        popup.classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
